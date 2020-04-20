@@ -1,0 +1,27 @@
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span> class="icon-bar"></span>
+          <span> class="icon-bar"></span>
+          <span> class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">동국푸드</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/partner/">홈</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="/partner/menu/">메뉴</a></li>
+          <li><a href="/partner/order/">주문</a></li>
+          <li><a href="/partner/logout/">로그아웃</a></li>
+          {% else %}
+          <li><a href="/partner/login/">로그인</a></li>
+          <li><a href="/partner/signup/">회원가입</a></li>
+          {% endif %}
+
+        </ul>
+      </div>
+    </div>
+  </nav>

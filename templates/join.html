@@ -1,0 +1,15 @@
+<!DOCTUPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ex</title>
+</head>
+<body>
+  <form name="test" action="dojoin" method="post"> {% csrf_token %}
+    ID : <input type="text" name="id"> </br>
+    PW : <input type="password" name="PW"> </br>
+    PW CONF : <input type="password" name="pwconf"> </br>
+    <input type="submit" value="전송">
+  </form>
+</body>
+</html>

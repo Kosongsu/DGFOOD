@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}Dogguk{% endblock %}
+{% block body %}
+{% include "navbar.html" %}
+<div class="container">
+  {% if user.is_authenticated %}
+    {% if user.store %}
+      <div class="raw">
+        <div class="col-sm-6 col-sm-offset-3">
+          <h2>환영합니다.</h2>
+          <table class="table">
+            <tr>
+              <th>
+                업체이름
+              </th>
+              <td>
+              {{ user.store.name }}
+              </td>
+            </tr>
+            <tr>
+              <th>
+                연락처
+              </th>
+              <td>
+              {{ user.store.contact }}
+              </td>
+            </tr>
+            <tr>
+              <th>
+                주소
+              </th>
+              <td>
+              {{ user.store.address }}
+              </td>
+            </tr>
+            <tr>
+              <th>
+                업체 소개
+              </th>
+              <td>
+              {{ user.store.description }}
+              </td>
+            </tr>
+          </table>
+          <a href="/partner/edit/">
+            <button class="btn btn-defaul btn-block">
+              수정하기
+            </button>
+          </a>
+        </div>
+      </div>
+    {% else %}
+      추가정보를 입력하세요
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <form action="" method="post">
+        {% csrf_token %}
+        <!-- <div class="form-group">
+          <input type="text" name="name" class="form-control">
+        </div>
+        <div>
+          <input type="text" name="contact">
+        </div>
+        <div>
+          <input type="text" name="address">
+        </div>
+        <div>
+          <input type="text" name="description">
+        </div> -->
+        {{ form.as_p }}
+          <button class="btn btn-default">저장하기</button>
+        </form>
+        </div>
+      </div>
+    {% endif %}
+  {% else %}
+  <div>로그인 해주세요</div>
+  {% endif %}
+</div>
+{% endblock %}

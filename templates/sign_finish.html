@@ -1,0 +1,23 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.12.4.js" crossorigin="anonymous"></script>
+  <script src="{% static "js/sign.js" %}"</script>
+  <link href="{% static "css/common.css" %}" rel="stylesheet">
+  <link href="{% static "css/sign.css" %}" rel="stylesheet">
+  <title>동국푸드</title>
+ </head>
+ <body>
+	<div class="wrap">
+		<h1><img src="{% static "img/logo.png" %}" class="mainLogo"></h1>
+		<p style="font-size:20px;margin-top:50px;padding-left:200px;">
+		안녕하세요 세상에 있는 <span style="color:#ffbf64;font-weight:bold;font-size:25px;">맛을</span> 찾다
+		<span style="color:#ff690e;font-weight:bold;font-size:25px;">DG푸드</span>입니다.</p>
+		<p style="font-size:20px;margin-top:10px;margin-bottom:100px;padding-left:200px;">회원가입 해주셔서 감사합니다. </p>
+		<img src="{% static "img/signFin.png" %}" style="display:block;margin:0 auto;">
+	</div>
+ </body>
+</html>
